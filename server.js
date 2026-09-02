@@ -1,11 +1,12 @@
 const express = require("express");
-const routes = require('./Routes/routes');
-const sequelize = require('./');
 
 const app = express();
 
 app.use(express.json());
-app.use(routes);
+
+const healthRoutes = require("./src/Routes/health");
+
+app.use(healthRoutes);
 
 const PORT = 3000;
 
